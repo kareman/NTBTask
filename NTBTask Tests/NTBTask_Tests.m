@@ -74,7 +74,7 @@
 	XCTAssertEqualObjects(output, @"/private\n");
 }
 
-- (void)testOutputHandler
+- (void)testWwriteAndCloseInputWorksWithLaunch
 {
 	NTBTask *sut = [[NTBTask alloc] initWithLaunchPath:@"/bin/bash"];
 
@@ -100,13 +100,14 @@
 
 	[sut launch];
 	[self waitForStatus:XCTAsyncTestCaseStatusSucceeded timeout:5];
-	XCTAssertEqualObjects(result, @"sleeping for 0.3\nsleeping for 0.3\nsleeping for 0.3\n", @"incomplete");
+
+	XCTAssertEqualObjects(result, @"sleeping for 0.3\nsleeping for 0.3\nsleeping for 0.3\n", @"incomplete output");
 	XCTAssert(count == 3);
 	NSTask *_task = (NSTask *)[sut valueForKey:@"_task"];
-	XCTAssertNil([_task.standardOutput fileHandleForReading].readabilityHandler);
+	XCTAssertNil([_task.standardOutput fileHandleForReading].readabilityHandler, @"should have been set to nil in the completionHandler");
 }
 
-- (void)notestOutputHandlerCopy
+- (void)dontTestOutputHandlerCopy
 {
 	NTBTask *sut = [[NTBTask alloc] initWithLaunchPath:@"/bin/cp"];
 	NSString *tempdir = NSTemporaryDirectory();

@@ -1,3 +1,4 @@
+# https://github.com/haaakon/Apple-clang-format/blob/master/.clang-format
 ---
 Language:        Cpp
 # BasedOnStyle:  LLVM
