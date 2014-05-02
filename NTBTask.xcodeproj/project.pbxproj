@@ -7,17 +7,23 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BA7D5AC71913155800E44D00 /* NTBTask.m in Sources */ = {isa = PBXBuildFile; fileRef = BA7D5AC61913155800E44D00 /* NTBTask.m */; };
+		BA7D5ACB1913158A00E44D00 /* XCTestCase+AsyncTesting.m in Sources */ = {isa = PBXBuildFile; fileRef = BA7D5AC91913158A00E44D00 /* XCTestCase+AsyncTesting.m */; };
+		BA7D5ACC1913158A00E44D00 /* NTBTask_Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = BA7D5ACA1913158A00E44D00 /* NTBTask_Tests.m */; };
 		BAFE7F591912DD20006184FF /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BAFE7F581912DD20006184FF /* XCTest.framework */; };
 		BAFE7F5F1912DD20006184FF /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = BAFE7F5D1912DD20006184FF /* InfoPlist.strings */; };
-		BAFE7F611912DD20006184FF /* NTBTask_Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = BAFE7F601912DD20006184FF /* NTBTask_Tests.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		BA7D5AC51913155800E44D00 /* NTBTask.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NTBTask.h; sourceTree = "<group>"; };
+		BA7D5AC61913155800E44D00 /* NTBTask.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NTBTask.m; sourceTree = "<group>"; };
+		BA7D5AC81913158A00E44D00 /* XCTestCase+AsyncTesting.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "XCTestCase+AsyncTesting.h"; sourceTree = "<group>"; };
+		BA7D5AC91913158A00E44D00 /* XCTestCase+AsyncTesting.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "XCTestCase+AsyncTesting.m"; sourceTree = "<group>"; };
+		BA7D5ACA1913158A00E44D00 /* NTBTask_Tests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NTBTask_Tests.m; sourceTree = "<group>"; };
 		BAFE7F551912DD20006184FF /* NTBTask Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "NTBTask Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BAFE7F581912DD20006184FF /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		BAFE7F5C1912DD20006184FF /* NTBTask Tests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "NTBTask Tests-Info.plist"; sourceTree = "<group>"; };
 		BAFE7F5E1912DD20006184FF /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		BAFE7F601912DD20006184FF /* NTBTask_Tests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NTBTask_Tests.m; sourceTree = "<group>"; };
 		BAFE7F621912DD20006184FF /* NTBTask Tests-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NTBTask Tests-Prefix.pch"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -36,6 +42,8 @@
 		BAA9232D1912C75600342959 = {
 			isa = PBXGroup;
 			children = (
+				BA7D5AC51913155800E44D00 /* NTBTask.h */,
+				BA7D5AC61913155800E44D00 /* NTBTask.m */,
 				BAFE7F5A1912DD20006184FF /* NTBTask Tests */,
 				BAFE7F571912DD20006184FF /* Frameworks */,
 				BAFE7F561912DD20006184FF /* Products */,
@@ -61,7 +69,9 @@
 		BAFE7F5A1912DD20006184FF /* NTBTask Tests */ = {
 			isa = PBXGroup;
 			children = (
-				BAFE7F601912DD20006184FF /* NTBTask_Tests.m */,
+				BA7D5AC81913158A00E44D00 /* XCTestCase+AsyncTesting.h */,
+				BA7D5AC91913158A00E44D00 /* XCTestCase+AsyncTesting.m */,
+				BA7D5ACA1913158A00E44D00 /* NTBTask_Tests.m */,
 				BAFE7F5B1912DD20006184FF /* Supporting Files */,
 			);
 			path = "NTBTask Tests";
@@ -138,7 +148,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BAFE7F611912DD20006184FF /* NTBTask_Tests.m in Sources */,
+				BA7D5ACB1913158A00E44D00 /* XCTestCase+AsyncTesting.m in Sources */,
+				BA7D5AC71913155800E44D00 /* NTBTask.m in Sources */,
+				BA7D5ACC1913158A00E44D00 /* NTBTask_Tests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -8,37 +8,33 @@
 
 #import <Foundation/Foundation.h>
 
-
 @interface NTBTask : NSObject {
-	
-@private
-	NSTask* _task;
-	
+
+  @private
+	NSTask *_task;
 }
 
 @property NSStringEncoding encoding;
 
-@property (nonatomic,strong) void (^outputHandler)(NSString *);
-@property (nonatomic,strong) void (^errorHandler)(NSString *);
-@property (nonatomic,strong) void (^completionHandler)(NTBTask *);
+@property (nonatomic, strong) void (^outputHandler)(NSString *);
+@property (nonatomic, strong) void (^errorHandler)(NSString *);
+@property (nonatomic, strong) void (^completionHandler)(NTBTask *);
 
-
-- (instancetype) initWithLaunchPath:(NSString*) launchPath;
-- (void) launch;
-- (void) write:(NSString*)input;
-- (void) writeAndCloseInput:(NSString*)input;
-- (NSString *) waitForOutputString;
+- (instancetype)initWithLaunchPath:(NSString *)launchPath;
+- (void)launch;
+- (void)write:(NSString *)input;
+- (void)writeAndCloseInput:(NSString *)input;
+- (NSString *)waitForOutputString;
 
 @end
 
-
 @interface NTBTask (ForwardedToNSTask)
 
-@property NSString* currentDirectoryPath;
-@property NSArray* arguments;
-@property NSDictionary* environment;
-@property (readonly) int processIdentifier; 
-@property (readonly) int terminationStatus; 
+@property NSString *currentDirectoryPath;
+@property NSArray *arguments;
+@property NSDictionary *environment;
+@property (readonly) int processIdentifier;
+@property (readonly) int terminationStatus;
 @property (readonly) NSTaskTerminationReason terminationReason;
 @property (readonly) BOOL isRunning;
 @property id standardInput;
