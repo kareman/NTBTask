@@ -5,6 +5,8 @@
 //  Created by Kåre Morstøl on 31/03/14.
 //  Copyright (c) 2014 NotTooBad Software. All rights reserved.
 //
+//  This program and the accompanying materials are made available under the terms of the Eclipse Public License v1.0 which accompanies this
+//  distribution, and is available at http://www.eclipse.org/legal/epl-v10.html
 
 #import <XCTest/XCTest.h>
 #import "NTBTask.h"
