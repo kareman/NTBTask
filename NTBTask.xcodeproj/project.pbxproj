@@ -17,6 +17,16 @@
 		BAFE7F5F1912DD20006184FF /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = BAFE7F5D1912DD20006184FF /* InfoPlist.strings */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		BAF2304719168DE800B77D7F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BAA9232E1912C75600342959 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = BAAB90CB19168A8800138181;
+			remoteInfo = NTBTask;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
 		BA7D5AC51913155800E44D00 /* NTBTask.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NTBTask.h; sourceTree = "<group>"; };
 		BA7D5AC61913155800E44D00 /* NTBTask.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NTBTask.m; sourceTree = "<group>"; };
@@ -29,14 +39,10 @@
 		BAAB90D019168A8800138181 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		BAAB90D119168A8800138181 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		BAAB90D219168A8800138181 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
-		BAAB90D519168A8800138181 /* NTBTask-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NTBTask-Prefix.pch"; sourceTree = "<group>"; };
-		BAAB90D619168A8800138181 /* NTBTask.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NTBTask.h; sourceTree = "<group>"; };
-		BAAB90D719168A8800138181 /* NTBTask.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NTBTask.m; sourceTree = "<group>"; };
 		BAFE7F551912DD20006184FF /* NTBTask Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "NTBTask Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BAFE7F581912DD20006184FF /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		BAFE7F5C1912DD20006184FF /* NTBTask Tests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "NTBTask Tests-Info.plist"; sourceTree = "<group>"; };
 		BAFE7F5E1912DD20006184FF /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		BAFE7F621912DD20006184FF /* NTBTask Tests-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NTBTask Tests-Prefix.pch"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,7 +72,6 @@
 				BA7D5AC51913155800E44D00 /* NTBTask.h */,
 				BA7D5AC61913155800E44D00 /* NTBTask.m */,
 				BAFE7F5A1912DD20006184FF /* NTBTask Tests */,
-				BAAB90D319168A8800138181 /* NTBTask */,
 				BAFE7F571912DD20006184FF /* Frameworks */,
 				BAFE7F561912DD20006184FF /* Products */,
 			);
@@ -80,24 +85,6 @@
 				BAAB90D219168A8800138181 /* AppKit.framework */,
 			);
 			name = "Other Frameworks";
-			sourceTree = "<group>";
-		};
-		BAAB90D319168A8800138181 /* NTBTask */ = {
-			isa = PBXGroup;
-			children = (
-				BAAB90D619168A8800138181 /* NTBTask.h */,
-				BAAB90D719168A8800138181 /* NTBTask.m */,
-				BAAB90D419168A8800138181 /* Supporting Files */,
-			);
-			path = NTBTask;
-			sourceTree = "<group>";
-		};
-		BAAB90D419168A8800138181 /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				BAAB90D519168A8800138181 /* NTBTask-Prefix.pch */,
-			);
-			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
 		BAFE7F561912DD20006184FF /* Products */ = {
@@ -135,7 +122,6 @@
 			children = (
 				BAFE7F5C1912DD20006184FF /* NTBTask Tests-Info.plist */,
 				BAFE7F5D1912DD20006184FF /* InfoPlist.strings */,
-				BAFE7F621912DD20006184FF /* NTBTask Tests-Prefix.pch */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -182,6 +168,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				BAF2304819168DE800B77D7F /* PBXTargetDependency */,
 			);
 			name = "NTBTask Tests";
 			productName = "NTBTask Tests";
@@ -246,6 +233,14 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		BAF2304819168DE800B77D7F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = BAAB90CB19168A8800138181 /* NTBTask */;
+			targetProxy = BAF2304719168DE800B77D7F /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin PBXVariantGroup section */
 		BAFE7F5D1912DD20006184FF /* InfoPlist.strings */ = {
 			isa = PBXVariantGroup;
@@ -291,8 +286,7 @@
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
 				GCC_OPTIMIZATION_LEVEL = 0;
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "NTBTask/NTBTask-Prefix.pch";
+				GCC_PRECOMPILE_PREFIX_HEADER = NO;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
 					"$(inherited)",
@@ -307,6 +301,7 @@
 				MACOSX_DEPLOYMENT_TARGET = 10.9;
 				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PUBLIC_HEADERS_FOLDER_PATH = "include/$(TARGET_NAME)";
 				SDKROOT = macosx;
 			};
 			name = Debug;
@@ -332,8 +327,7 @@
 				ENABLE_NS_ASSERTIONS = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "NTBTask/NTBTask-Prefix.pch";
+				GCC_PRECOMPILE_PREFIX_HEADER = NO;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
 				GCC_WARN_UNDECLARED_SELECTOR = YES;
@@ -342,6 +336,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				MACOSX_DEPLOYMENT_TARGET = 10.9;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PUBLIC_HEADERS_FOLDER_PATH = "include/$(TARGET_NAME)";
 				SDKROOT = macosx;
 			};
 			name = Release;
@@ -371,8 +366,8 @@
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
 				GCC_OPTIMIZATION_LEVEL = 0;
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "NTBTask Tests/NTBTask Tests-Prefix.pch";
+				GCC_PRECOMPILE_PREFIX_HEADER = NO;
+				GCC_PREFIX_HEADER = "";
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
 					"$(inherited)",
@@ -418,8 +413,8 @@
 				);
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "NTBTask Tests/NTBTask Tests-Prefix.pch";
+				GCC_PRECOMPILE_PREFIX_HEADER = NO;
+				GCC_PREFIX_HEADER = "";
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
 				GCC_WARN_UNDECLARED_SELECTOR = YES;
