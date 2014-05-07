@@ -8,7 +8,7 @@
       <BuildActionEntries>
          <BuildActionEntry
             buildForTesting = "YES"
-            buildForRunning = "YES"
+            buildForRunning = "NO"
             buildForProfiling = "YES"
             buildForArchiving = "YES"
             buildForAnalyzing = "YES">
@@ -32,9 +32,9 @@
             skipped = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "BAAB90DC19168A8800138181"
-               BuildableName = "NTBTaskTests.xctest"
-               BlueprintName = "NTBTaskTests"
+               BlueprintIdentifier = "BAFE7F541912DD20006184FF"
+               BuildableName = "NTBTask Tests.xctest"
+               BlueprintName = "NTBTask Tests"
                ReferencedContainer = "container:NTBTask.xcodeproj">
             </BuildableReference>
          </TestableReference>
