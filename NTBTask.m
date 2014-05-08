@@ -1,6 +1,5 @@
 //
 //  NTBTask.m
-//  Copy files
 //
 //  Created by Kåre Morstøl on 30/03/14.
 //  Copyright (c) 2014 NotTooBad Software. All rights reserved.
@@ -33,7 +32,7 @@
 // http://stackoverflow.com/a/16274586
 - (void)setOutputHandler:(void (^)(NSString *))outputHandler
 {
-	// @todo: - (void)releaseoutputhandler
+	[NTBTask stopFileHandle:_task.standardOutput];
 	_outputHandler = outputHandler;
 	_task.standardOutput = [NSPipe pipe];
 	[_task.standardOutput fileHandleForReading].readabilityHandler = ^(NSFileHandle *file)
@@ -47,6 +46,7 @@
 // http://stackoverflow.com/a/16274586
 - (void)setErrorHandler:(void (^)(NSString *))errorHandler
 {
+	[NTBTask stopFileHandle:_task.standardError];
 	_errorHandler = errorHandler;
 	_task.standardError = [NSPipe pipe];
 	[_task.standardError fileHandleForReading].readabilityHandler = ^(NSFileHandle *file)
@@ -57,8 +57,16 @@
 	};
 }
 
-- (void)releaseoutputhandler
+/**
+ *  Stops the file handle from reading. Should be called before replacing/releasing standard output and standard error.
+ *
+ *  @param outputhandler  NSTask standardOutput or standardError.
+ */
++ (void)stopFileHandle:(id)standardoutputorerror
 {
+	if (standardoutputorerror && [standardoutputorerror isKindOfClass:[NSPipe class]]) {
+		[standardoutputorerror fileHandleForReading].readabilityHandler = nil;
+	}
 }
 
 #pragma mark actions
@@ -80,13 +88,14 @@
 
 - (NSString *)waitForOutputString
 {
+	[NTBTask stopFileHandle:_task.standardOutput];
 	NSPipe *output = [NSPipe pipe];
-	[_task setStandardOutput:output];
+	_task.standardOutput = output;
 	if (!_task.standardError) {
 		_task.standardError = _task.standardOutput;
 	}
 
-	if ([_task.standardInput isKindOfClass:[NSPipe class]]) {
+	if ([_task.standardInput isKindOfClass:[NSPipe class]]) {	
 		[[_task.standardInput fileHandleForWriting] closeFile];
 	}
 
@@ -110,13 +119,9 @@
 	__weak NTBTask *weakself = self;
 	[_task setTerminationHandler:^(NSTask *thistask) {
 
-		if (thistask.standardOutput && [thistask.standardOutput isKindOfClass:[NSPipe class]]) {
-			[thistask.standardOutput fileHandleForReading].readabilityHandler = nil;
-		}
-		if (thistask.standardError && [thistask.standardError isKindOfClass:[NSPipe class]]) {
-			[thistask.standardError fileHandleForReading].readabilityHandler = nil;
-		}
-
+		[NTBTask stopFileHandle:thistask.standardOutput];
+		[NTBTask stopFileHandle:thistask.standardError];
+		
 		if (weakself.completionHandler) {
 			weakself.completionHandler(weakself);
 		}
