@@ -32,6 +32,7 @@
 	NSString *result = [NTBTask pathForShellCommand:@"cat"];
 	XCTAssertEqualObjects(result, @"/bin/cat");
 }
+
 - (void)testPathForShellCommand_SkipsCommandsBeginningWithPaths
 {
 	NSString *result = [NTBTask pathForShellCommand:@".cat"];

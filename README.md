@@ -12,14 +12,14 @@ Add NTBTask.h and NTBTask.m to your project.
 #### Get output from command
 
 ```Objective-C
-NTBTask *task = [[NTBTask alloc] initWithLaunchPath:@"/bin/env"];
+NTBTask *task = [[NTBTask alloc] initWithLaunchPath:@"env"];
 NSString *output = [task waitForOutputString];
 ```
 
 #### Send input to command
 
 ```Objective-C
-NTBTask *task = [[NTBTask alloc] initWithLaunchPath:@"/bin/cat"];
+NTBTask *task = [[NTBTask alloc] initWithLaunchPath:@"cat"];
 NSString *input = @"What goes in, must come out";
 [task write:input];
 NSString *output = [task waitForOutputString];
@@ -33,7 +33,7 @@ task.arguments = @[ @"testing testing", @"123" ];
 #### Run shell script
 
 ```Objective-C
-NTBTask *task = [[NTBTask alloc] initWithLaunchPath:@"/bin/bash"];
+NTBTask *task = [[NTBTask alloc] initWithLaunchPath:@"bash"];
 NSString *slowscript = @"echo 'sleeping for 0.3'\n"
 			"sleep 0.3\n"
 			"echo 'sleeping for 0.3'\n"
@@ -47,7 +47,7 @@ NSString *slowscript = @"echo 'sleeping for 0.3'\n"
 #### Get continuous output
 
 ```Objective-C
-NTBTask *task = [[NTBTask alloc] initWithLaunchPath:@"/bin/cp"];
+NTBTask *task = [[NTBTask alloc] initWithLaunchPath:@"cp"];
 NSString *tempdir = NSTemporaryDirectory();
 task.arguments = @[ @"-Rpnv", @".", tempdir ];
 

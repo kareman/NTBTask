@@ -41,9 +41,10 @@
 @property (nonatomic, strong) void (^completionHandler)(NTBTask *);
 
 /**
- *  Initialises a new task.
- *
- *  @param launchPath  The full path to the executable.
+ Initialises a new task. Unless launchPath begins with a "." or a "/" NTBTask will try to find the full path automatically, using the search
+ path of the current process.
+
+ @param launchPath  The path for the executable to be launched.
  */
 - (instancetype)initWithLaunchPath:(NSString *)launchPath;
 
@@ -82,7 +83,7 @@
 
  @param command  The command
 
- @return  The full path
+ @return  The full path, or nil if the command was not found.
  */
 + (NSString *)pathForShellCommand:(NSString *)command;
 
@@ -90,6 +91,7 @@
 
 @interface NTBTask (ForwardedToNSTask)
 
+@property (readonly) NSString *launchPath;
 @property NSString *currentDirectoryPath;
 @property NSArray *arguments;
 @property NSDictionary *environment;

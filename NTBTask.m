@@ -17,7 +17,9 @@
 	if (self) {
 		_task = [[NSTask alloc] init];
 		_encoding = NSUTF8StringEncoding;
-		_task.launchPath = launchPath;
+
+		NSString *path = [NTBTask pathForShellCommand:launchPath];
+		_task.launchPath = path ? path : launchPath;
 	}
 	return self;
 }
@@ -49,7 +51,7 @@
 		NTBTask *pathfinder = [[NTBTask alloc] initWithLaunchPath:@"/usr/bin/which"];
 		pathfinder.arguments = @[ command ];
 		NSString *result = [[pathfinder waitForOutputString] stringByTrimmingCharactersInSet:[NSCharacterSet newlineCharacterSet]];
-		return result;
+		return [result length] > 0 ? result : nil;
 	}
 }
 

@@ -1,6 +1,5 @@
 //
 //  NTBTaskTests.m
-//  Copy files
 //
 //  Created by Kåre Morstøl on 31/03/14.
 //  Copyright (c) 2014 NotTooBad Software. All rights reserved.
@@ -72,6 +71,22 @@
 
 	NSString *output = [sut waitForOutputString];
 	XCTAssertEqualObjects(output, @"/private\n");
+}
+
+- (void)testAutomaticallyFindsPathForCommand
+{
+	NTBTask *sut = [[NTBTask alloc] initWithLaunchPath:@"pwd"];
+	sut.currentDirectoryPath = @"/private";
+	XCTAssertEqualObjects(sut.launchPath, @"/bin/pwd");
+
+	NSString *output = [sut waitForOutputString];
+	XCTAssertEqualObjects(output, @"/private\n");
+}
+
+- (void)testLeavesLaunchpathAloneIfCommandIsNotFound
+{
+	NTBTask *sut = [[NTBTask alloc] initWithLaunchPath:@"sltjw6v"];
+	XCTAssertEqualObjects(sut.launchPath, @"sltjw6v");
 }
 
 - (void)testWwriteAndCloseInputWorksWithLaunch
