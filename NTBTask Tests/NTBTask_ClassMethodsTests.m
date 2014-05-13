@@ -41,4 +41,11 @@
 	result = [NTBTask pathForShellCommand:@"/cat"];
 	XCTAssertEqualObjects(result, @"/cat");
 }
+
+- (void)testPathForShellCommandReturnsNilWhenCommandIsNotFound
+{
+	NSString *result = [NTBTask pathForShellCommand:@"nowaythiscommandexists"];
+	XCTAssertNil(result);
+}
+
 @end
