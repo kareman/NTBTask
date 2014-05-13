@@ -76,6 +76,16 @@
  */
 - (NSString *)waitForOutputString;
 
+/**
+ Finds the full path for the given command. If the command begins with a "." or a "/" it just returns the command since it then presumably
+ already contains the path.
+
+ @param command  The command
+
+ @return  The full path
+ */
++ (NSString *)pathForShellCommand:(NSString *)command;
+
 @end
 
 @interface NTBTask (ForwardedToNSTask)

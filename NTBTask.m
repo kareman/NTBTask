@@ -27,6 +27,32 @@
 	return _task;
 }
 
+#pragma mark helper methods
+
+/**
+ *  Stops the file handle from reading. Should be called before replacing/releasing standard output and standard error.
+ *
+ *  @param outputhandler  NSTask standardOutput or standardError.
+ */
++ (void)stopFileHandle:(id)standardoutputorerror
+{
+	if (standardoutputorerror && [standardoutputorerror isKindOfClass:[NSPipe class]]) {
+		[standardoutputorerror fileHandleForReading].readabilityHandler = nil;
+	}
+}
+
++ (NSString *)pathForShellCommand:(NSString *)command
+{
+	if ([command hasPrefix:@"."] || [command hasPrefix:@"/"]) {
+		return command;
+	} else {
+		NTBTask *pathfinder = [[NTBTask alloc] initWithLaunchPath:@"/usr/bin/which"];
+		pathfinder.arguments = @[ command ];
+		NSString *result = [[pathfinder waitForOutputString] stringByTrimmingCharactersInSet:[NSCharacterSet newlineCharacterSet]];
+		return result;
+	}
+}
+
 #pragma mark properties
 
 // http://stackoverflow.com/a/16274586
@@ -57,18 +83,6 @@
 	};
 }
 
-/**
- *  Stops the file handle from reading. Should be called before replacing/releasing standard output and standard error.
- *
- *  @param outputhandler  NSTask standardOutput or standardError.
- */
-+ (void)stopFileHandle:(id)standardoutputorerror
-{
-	if (standardoutputorerror && [standardoutputorerror isKindOfClass:[NSPipe class]]) {
-		[standardoutputorerror fileHandleForReading].readabilityHandler = nil;
-	}
-}
-
 #pragma mark actions
 
 - (void)write:(NSString *)input
@@ -95,7 +109,7 @@
 		_task.standardError = _task.standardOutput;
 	}
 
-	if ([_task.standardInput isKindOfClass:[NSPipe class]]) {	
+	if ([_task.standardInput isKindOfClass:[NSPipe class]]) {
 		[[_task.standardInput fileHandleForWriting] closeFile];
 	}
 
@@ -121,7 +135,7 @@
 
 		[NTBTask stopFileHandle:thistask.standardOutput];
 		[NTBTask stopFileHandle:thistask.standardError];
-		
+
 		if (weakself.completionHandler) {
 			weakself.completionHandler(weakself);
 		}

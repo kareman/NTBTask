@@ -11,6 +11,7 @@
 		BA7D5ACC1913158A00E44D00 /* NTBTask_Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = BA7D5ACA1913158A00E44D00 /* NTBTask_Tests.m */; };
 		BAAB90CE19168A8800138181 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BAAB90CD19168A8800138181 /* Cocoa.framework */; };
 		BAAB90F119168AF500138181 /* NTBTask.h in Headers */ = {isa = PBXBuildFile; fileRef = BA7D5AC51913155800E44D00 /* NTBTask.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		BAE32DFF1922336400AEB65E /* NTBTask_ClassMethodsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = BAE32DFE1922336400AEB65E /* NTBTask_ClassMethodsTests.m */; };
 		BAF2304519168CA200B77D7F /* NTBTask.m in Sources */ = {isa = PBXBuildFile; fileRef = BA7D5AC61913155800E44D00 /* NTBTask.m */; };
 		BAF2304619168D1400B77D7F /* NTBTask.m in Sources */ = {isa = PBXBuildFile; fileRef = BA7D5AC61913155800E44D00 /* NTBTask.m */; };
 		BAFE7F591912DD20006184FF /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BAFE7F581912DD20006184FF /* XCTest.framework */; };
@@ -39,6 +40,7 @@
 		BAAB90D019168A8800138181 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		BAAB90D119168A8800138181 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		BAAB90D219168A8800138181 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
+		BAE32DFE1922336400AEB65E /* NTBTask_ClassMethodsTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NTBTask_ClassMethodsTests.m; sourceTree = "<group>"; };
 		BAFE7F551912DD20006184FF /* NTBTask Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "NTBTask Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BAFE7F581912DD20006184FF /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		BAFE7F5C1912DD20006184FF /* NTBTask Tests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "NTBTask Tests-Info.plist"; sourceTree = "<group>"; };
@@ -112,6 +114,7 @@
 				BA7D5AC81913158A00E44D00 /* XCTestCase+AsyncTesting.h */,
 				BA7D5AC91913158A00E44D00 /* XCTestCase+AsyncTesting.m */,
 				BA7D5ACA1913158A00E44D00 /* NTBTask_Tests.m */,
+				BAE32DFE1922336400AEB65E /* NTBTask_ClassMethodsTests.m */,
 				BAFE7F5B1912DD20006184FF /* Supporting Files */,
 			);
 			path = "NTBTask Tests";
@@ -226,6 +229,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BAF2304619168D1400B77D7F /* NTBTask.m in Sources */,
+				BAE32DFF1922336400AEB65E /* NTBTask_ClassMethodsTests.m in Sources */,
 				BA7D5ACB1913158A00E44D00 /* XCTestCase+AsyncTesting.m in Sources */,
 				BA7D5ACC1913158A00E44D00 /* NTBTask_Tests.m in Sources */,
 			);
