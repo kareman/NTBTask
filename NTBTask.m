@@ -24,6 +24,10 @@
 	return self;
 }
 
+/**
+ Forwards method calls to NSTask if this or super don't handle them. Used for the properties and methods in the "ForwardedToNSTask"
+ category.
+ */
 - (id)forwardingTargetForSelector:(SEL)aSelector
 {
 	if ([super respondsToSelector:aSelector]) {
@@ -36,9 +40,9 @@
 #pragma mark helper methods
 
 /**
- *  Stops the file handle from reading. Should be called before replacing/releasing standard output and standard error.
- *
- *  @param outputhandler  NSTask standardOutput or standardError.
+ Stops the file handle from reading. Should be called before replacing/releasing standard output and standard error.
+
+ @param standardoutputorerror  NSTask standardOutput or standardError.
  */
 + (void)stopFileHandle:(id)standardoutputorerror
 {
