@@ -26,7 +26,11 @@
 
 - (id)forwardingTargetForSelector:(SEL)aSelector
 {
-	return _task;
+	if ([super respondsToSelector:aSelector]) {
+		return [super forwardingTargetForSelector:aSelector];
+	} else {
+		return _task;
+	}
 }
 
 #pragma mark helper methods
